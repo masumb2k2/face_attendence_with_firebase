@@ -1,0 +1,27 @@
+
+
+interface sum{
+    int sum=90;
+    void sumA();
+}
+interface add{
+    int add=10;
+    void addA();
+}
+class lab_8 implements sum,add{
+    @Override
+    public void sumA() {
+        System.out.println(+sum);
+    }
+
+    @Override
+    public void addA() {
+        System.out.println(+add);
+    }
+
+    public static void main(String[] args) {
+        lab_8 obj=new lab_8();
+        obj.addA();
+        obj.sumA();
+    }
+}

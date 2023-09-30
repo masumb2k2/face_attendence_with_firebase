@@ -1,0 +1,27 @@
+
+import java.sql.Connection;
+import java.sql.Statement;
+import java.sql.DriverManager;
+
+
+
+public class Threadtest {
+
+    String url="jdbc:mysql://loacalhose/app";
+    String username="root";
+    String pass="";
+
+    public static void main(String[] args){
+        Class.forName("com.mysql.jdbc.Driver");
+        try{
+            Connection con=DriverManager.getConnection(url,username,pass);
+            Statement st=con.createStatement();
+            st.executeQuery("select * from a;");
+            System.out.print("sucess");
+        }
+        catch(Exception E){
+            System.out.print("unsucess");
+        }
+    }
+
+}

@@ -1,0 +1,39 @@
+import java.lang.Thread;
+
+public class lab_7 {
+    public synchronized void printer(String msg) {
+        System.out.println("[");
+        try {
+            Thread.sleep(5000);
+            System.out.println(msg);
+            Thread.sleep(5000);
+        } catch (Exception e) {
+            System.out.println("]");
+        }
+
+    }
+}
+
+class user extends Thread{
+    lab_7 p;
+    String msg;
+    public user (lab_7 p,String msg){
+        this.p=p;
+        msg=msg;
+    }
+    public void run(){
+        p.printer(msg);
+    }
+}
+class syncdemo {
+    public static void main(String[] args) {
+        System.out.println("creating a poninter");
+        lab_7 p = new lab_7();
+        System.out.println("creatinf two user thread");
+        user u1 = new user(p, "one");
+        user u2 = new user(p, "user two");
+        System.out.println("starting user thread");
+        u1.start();
+        u2.start();
+    }
+}

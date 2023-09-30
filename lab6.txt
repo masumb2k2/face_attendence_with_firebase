@@ -1,0 +1,15 @@
+public class lab_6 {
+    public static void main(String[] args) {
+        try{
+            int a=10;
+            int b=-0;
+            int c=a/b;
+            throw (new Exception("invalid"));
+        }
+        catch (Exception e){
+            System.out.println(e);
+            System.out.println("value error");
+        }
+    }
+
+}

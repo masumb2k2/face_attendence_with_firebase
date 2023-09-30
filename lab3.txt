@@ -1,0 +1,21 @@
+public class lab_3 {
+    public void method(){
+        System.out.println("First method");
+    }
+    public  void method(int a){
+        System.out.println("second method");
+    }
+}
+class two{
+    public void method(){
+        System.out.println("Overrirrding");
+    }
+
+    public static void main(String[] args) {
+        lab_3 obj1=new lab_3();
+        two obj2=new two();
+        obj1.method();
+        obj1.method(2);
+        obj2.method();
+    }
+}

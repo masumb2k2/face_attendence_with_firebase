@@ -1,0 +1,20 @@
+import java.lang.Thread;
+
+public class lab_5 extends Thread {
+    static {
+        Thread t=Thread.currentThread();
+        System.out.println("thread test is loadby"+t.getName()+" thread");
+        t.setName("masum");
+        System.out.println("suspend thread for 5 second");
+        try {
+            Thread.sleep(5000);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    public static void main(String[] args) {
+        Thread t=Thread.currentThread();
+        System.out.println("Main is invoked in "+t.getName()+" thread...");
+    }
+}
